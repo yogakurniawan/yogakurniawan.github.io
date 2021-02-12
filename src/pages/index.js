@@ -17,12 +17,19 @@ const mainStyles = {
   position: "relative",
 };
 
+const socialMediaContainerStyles = {
+  display: "flex",
+  width: "100%",
+  justifyContent: "space-around",
+  marginTop: "5rem",
+};
+
 const glassStyles = {
   background: "white",
   minHeight: "60vh",
   width: "60%",
   background:
-    "linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)",
+    "linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))",
   borderRadius: "2rem",
   backdropFilter: "blur(2rem)",
   display: "flex",
@@ -74,6 +81,18 @@ const vueStyles = {
   borderRadius: "2rem",
 };
 
+const socialMediaItemStyles = {
+  background: "white",
+  height: "100px",
+  width: "100px",
+  background:
+    "linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))",
+  borderRadius: "10px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
 // markup
 const IndexPage = ({ data }) => {
   return (
@@ -83,7 +102,7 @@ const IndexPage = ({ data }) => {
           <Img
             imgStyle={photoStyles}
             objectFit="cover"
-            fluid={data.file.childImageSharp.fluid}
+            fluid={data.me.childImageSharp.fluid}
           />
         </div>
         <div style={glassStyles}>
@@ -103,6 +122,26 @@ const IndexPage = ({ data }) => {
                 <span style={vueStyles}>Vue</span>
               </div>
             </TextLoop>
+            <div style={socialMediaContainerStyles}>
+              <div style={socialMediaItemStyles}>
+                <Img fixed={data.github.childImageSharp.fixed} />
+              </div>
+              <div style={socialMediaItemStyles}>
+                <Img fixed={data.linkedin.childImageSharp.fixed} />
+              </div>
+              <div style={socialMediaItemStyles}>
+                <Img fixed={data.twitter.childImageSharp.fixed} />
+              </div>
+              <div style={socialMediaItemStyles}>
+                <Img fixed={data.instagram.childImageSharp.fixed} />
+              </div>
+              <div style={socialMediaItemStyles}>
+                <Img fixed={data.facebook.childImageSharp.fixed} />
+              </div>
+              <div style={socialMediaItemStyles}>
+                <Img fixed={data.youtube.childImageSharp.fixed} />
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -114,12 +153,52 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "me.jpeg" }) {
+    me: file(relativePath: { eq: "me.jpeg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fluid(maxWidth: 280, quality: 100) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    instagram: file(relativePath: { eq: "instagram.png" }) {
+      childImageSharp {
+        fixed(width: 80, height: 80) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    linkedin: file(relativePath: { eq: "linkedin.png" }) {
+      childImageSharp {
+        fixed(width: 80, height: 80) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    twitter: file(relativePath: { eq: "twitter.png" }) {
+      childImageSharp {
+        fixed(width: 80, height: 80) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    facebook: file(relativePath: { eq: "facebook.png" }) {
+      childImageSharp {
+        fixed(width: 80, height: 80) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    youtube: file(relativePath: { eq: "youtube.png" }) {
+      childImageSharp {
+        fixed(width: 80, height: 80) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    github: file(relativePath: { eq: "github.png" }) {
+      childImageSharp {
+        fixed(width: 80, height: 80) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
