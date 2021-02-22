@@ -20,40 +20,52 @@ const IndexPage = ({ data }) => {
         <div className={indexStyles.glass}>
           <div className={indexStyles.titleContainer}>
             <div className={indexStyles.title}>
-            <TextLoop springConfig={{ stiffness: 150, damping: 12 }}>
-              <div className={indexStyles.content}>Hello!</div>
-              <div className={indexStyles.content}>
-                I am <strong>Yoga Kurniawan</strong>
-              </div>
-              <div className={indexStyles.content}>Front-end Developer</div>
-              <div className={indexStyles.content}>
-                I <span className={indexStyles.love}>❤</span>{" "}
-                <span className={indexStyles.react}>React</span>
-              </div>
-              <div className={indexStyles.content}>
-                I <span className={indexStyles.love}>❤</span>{" "}
-                <span className={indexStyles.vue}>Vue</span>
-              </div>
-            </TextLoop>
+              <TextLoop springConfig={{ stiffness: 150, damping: 12 }}>
+                <div className={indexStyles.content}>Hello!</div>
+                <div className={indexStyles.content}>
+                  I am <strong>Yoga Kurniawan</strong>
+                </div>
+                <div className={indexStyles.content}>Front-end Developer</div>
+                <div className={indexStyles.content}>
+                  I <span className={indexStyles.love}>❤</span>{" "}
+                  <span className={indexStyles.react}>React</span>
+                </div>
+                <div className={indexStyles.content}>
+                  I <span className={indexStyles.love}>❤</span>{" "}
+                  <span className={indexStyles.vue}>Vue</span>
+                </div>
+              </TextLoop>
             </div>
             <div className={indexStyles.socialMediaContainer}>
               <div className={indexStyles.socialMedia}>
-                <Img fixed={data.github.childImageSharp.fixed} />
+                <a href="https://github.com/yogakurniawan">
+                  <Img fixed={data.github.childImageSharp.fixed} />
+                </a>
               </div>
               <div className={indexStyles.socialMedia}>
-                <Img fixed={data.linkedin.childImageSharp.fixed} />
+                <a href="https://www.linkedin.com/in/yogakurniawan/">
+                  <Img fixed={data.linkedin.childImageSharp.fixed} />
+                </a>
               </div>
               <div className={indexStyles.socialMedia}>
-                <Img fixed={data.twitter.childImageSharp.fixed} />
+                <a href="https://twitter.com/yogkurniawan">
+                  <Img fixed={data.twitter.childImageSharp.fixed} />
+                </a>
               </div>
               <div className={indexStyles.socialMedia}>
-                <Img fixed={data.instagram.childImageSharp.fixed} />
+                <a href="https://www.instagram.com/yogakurniawan">
+                  <Img fixed={data.instagram.childImageSharp.fixed} />
+                </a>
               </div>
               <div className={indexStyles.socialMedia}>
-                <Img fixed={data.facebook.childImageSharp.fixed} />
+                <a href="https://facebook.com/yogakurniawan">
+                  <Img fixed={data.facebook.childImageSharp.fixed} />
+                </a>
               </div>
               <div className={indexStyles.socialMedia}>
-                <Img fixed={data.youtube.childImageSharp.fixed} />
+                <a href="https://www.youtube.com/c/YogaKurniawan">
+                  <Img fixed={data.youtube.childImageSharp.fixed} />
+                </a>
               </div>
             </div>
           </div>
