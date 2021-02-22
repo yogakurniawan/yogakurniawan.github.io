@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
           <Img
             className={indexStyles.photo}
             objectFit="cover"
-            fluid={data.me.childImageSharp.fluid}
+            fluid={data.mypc.childImageSharp.fluid}
           />
         </div>
         <div className={indexStyles.glass}>
@@ -79,7 +79,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    me: file(relativePath: { eq: "me.jpeg" }) {
+    mypc: file(relativePath: { eq: "mypc.JPG" }) {
       childImageSharp {
         fluid(maxWidth: 280, quality: 100) {
           ...GatsbyImageSharpFluid
