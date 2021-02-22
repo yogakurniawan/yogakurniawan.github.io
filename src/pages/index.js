@@ -79,7 +79,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    mypc: file(relativePath: { eq: "mypc.JPG" }) {
+    mypc: file(relativePath: { eq: "mypc.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 280, quality: 100) {
           ...GatsbyImageSharpFluid
