@@ -1,144 +1,58 @@
 import * as React from "react";
 import Img from "gatsby-image";
 import TextLoop from "react-text-loop";
-import "fontsource-nunito";
 import Layout from "../components/layout";
-
-// styles
-const mainStyles = {
-  minHeight: "100vh",
-  color: "#232129",
-  background: "linear-gradient(to right top, #65dfc9, #6cdbeb)",
-  fontFamily: "-apple-system, Nunito, sans-serif, serif",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  paddingTop: "5%",
-  position: "relative",
-};
-
-const socialMediaContainerStyles = {
-  display: "flex",
-  width: "100%",
-  justifyContent: "space-around",
-  marginTop: "5rem",
-};
-
-const glassStyles = {
-  background: "white",
-  minHeight: "60vh",
-  width: "60%",
-  background:
-    "linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))",
-  borderRadius: "2rem",
-  backdropFilter: "blur(2rem)",
-  display: "flex",
-  justifyContent: "center",
-};
-
-const photoBoxStyles = {
-  zIndex: 3,
-  top: "8%",
-  position: "absolute",
-  width: "280px",
-  height: "280px",
-  borderRadius: "50%",
-  background: "rgb(101, 223, 201)",
-  border: "10px solid rgba(255, 255, 255, 0.7)",
-};
-
-const photoStyles = {
-  borderRadius: "50%",
-};
-
-const titleStyles = {
-  marginTop: "15%",
-};
-
-const contentStyles = {
-  width: "700px",
-  textAlign: "center",
-  fontSize: "4rem",
-};
-
-const loveStyles = {
-  color: "red",
-};
-
-const reactStyles = {
-  color: "#61dafb",
-  background: "white",
-  paddingRight: "20px",
-  paddingLeft: "20px",
-  borderRadius: "2rem",
-};
-
-const vueStyles = {
-  color: "#4fc08d",
-  background: "white",
-  paddingRight: "20px",
-  paddingLeft: "20px",
-  borderRadius: "2rem",
-};
-
-const socialMediaItemStyles = {
-  background: "white",
-  height: "100px",
-  width: "100px",
-  background:
-    "linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))",
-  borderRadius: "10px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
+import indexStyles from "./index.module.scss";
+import "fontsource-nunito";
 
 // markup
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <main style={mainStyles}>
-        <div style={photoBoxStyles}>
+      <main className={indexStyles.main}>
+        <div className={indexStyles.photoContainer}>
           <Img
-            imgStyle={photoStyles}
+            className={indexStyles.photo}
             objectFit="cover"
             fluid={data.me.childImageSharp.fluid}
           />
         </div>
-        <div style={glassStyles}>
-          <div style={titleStyles}>
+        <div className={indexStyles.glass}>
+          <div className={indexStyles.titleContainer}>
+            <div className={indexStyles.title}>
             <TextLoop springConfig={{ stiffness: 150, damping: 12 }}>
-              <div style={contentStyles}>Hello!</div>
-              <div style={contentStyles}>
+              <div className={indexStyles.content}>Hello!</div>
+              <div className={indexStyles.content}>
                 I am <strong>Yoga Kurniawan</strong>
               </div>
-              <div style={contentStyles}>Front-end Developer</div>
-              <div style={contentStyles}>
-                I <span style={loveStyles}>❤</span>{" "}
-                <span style={reactStyles}>React</span>
+              <div className={indexStyles.content}>Front-end Developer</div>
+              <div className={indexStyles.content}>
+                I <span className={indexStyles.love}>❤</span>{" "}
+                <span className={indexStyles.react}>React</span>
               </div>
-              <div style={contentStyles}>
-                I <span style={loveStyles}>❤</span>{" "}
-                <span style={vueStyles}>Vue</span>
+              <div className={indexStyles.content}>
+                I <span className={indexStyles.love}>❤</span>{" "}
+                <span className={indexStyles.vue}>Vue</span>
               </div>
             </TextLoop>
-            <div style={socialMediaContainerStyles}>
-              <div style={socialMediaItemStyles}>
+            </div>
+            <div className={indexStyles.socialMediaContainer}>
+              <div className={indexStyles.socialMedia}>
                 <Img fixed={data.github.childImageSharp.fixed} />
               </div>
-              <div style={socialMediaItemStyles}>
+              <div className={indexStyles.socialMedia}>
                 <Img fixed={data.linkedin.childImageSharp.fixed} />
               </div>
-              <div style={socialMediaItemStyles}>
+              <div className={indexStyles.socialMedia}>
                 <Img fixed={data.twitter.childImageSharp.fixed} />
               </div>
-              <div style={socialMediaItemStyles}>
+              <div className={indexStyles.socialMedia}>
                 <Img fixed={data.instagram.childImageSharp.fixed} />
               </div>
-              <div style={socialMediaItemStyles}>
+              <div className={indexStyles.socialMedia}>
                 <Img fixed={data.facebook.childImageSharp.fixed} />
               </div>
-              <div style={socialMediaItemStyles}>
+              <div className={indexStyles.socialMedia}>
                 <Img fixed={data.youtube.childImageSharp.fixed} />
               </div>
             </div>
